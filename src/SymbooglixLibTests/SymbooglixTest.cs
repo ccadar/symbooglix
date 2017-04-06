@@ -114,7 +114,7 @@ namespace SymbooglixLibTests
             if (!File.Exists(pathToSolver))
                 Assert.Fail("Could not find solver at \"{0}\"", pathToSolver);
 
-            var solver = new SimpleSolver(new Z3SMTLIBSolver(/*useNamedAttributes=*/ true, pathToSolver, /*persistentProcess=*/ true, true));
+            var solver = new SimpleSolver(new Z3SMTLIBSolver(/*useNamedAttributes=*/ true, pathToSolver, /*persistentProcess=*/ false, true));
             solver.SetTimeout(120); // FIXME: This is fragile
             return solver;
 
